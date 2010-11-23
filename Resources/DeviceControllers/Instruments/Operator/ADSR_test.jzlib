@@ -1,0 +1,22 @@
+<JZML>
+<WINDOW class="Breakpoint" text="Breakpoint" x="0" y="0" width="644" height="279" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="3223857,65793" coordinates="0" editable="0" free="0" grid="0" grid_steps="1,1" label="0" nbr="5" physic="2" zoom="0.000000">
+<PARAM name="x=" value="0.000000,0.330000,0.409932,0.660000,0.981028" send="17" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/x" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<PARAM name="y=" value="0.000083,0.788408,0.626576,0.626576,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/y" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="edit=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/edit" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attraction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/attraction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="friction=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/friction" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="speed=1" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/speed" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="rest=0.1" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/rest" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light={2, 2, 2, -2, 2}" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="holdX={1, 0, 0, 1, 0}" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/holdX" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="holdY={0, 0, 0, 0, 1}" send="0" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/holdY" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="last_x1=" value="0.330000" send="1" osc_target="0" osc_trigger="1" osc_message="/Breakpoint/last_x1" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="x1()" script="x[1] = clamp(x[1],0,0.33);
+x[2] = x[2] - last_x1 + x[1];
+last_x1 = x[1];" trigger_script="x[1]" trigger_type="0" trigger="1" osc_message="/Breakpoint/x1" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="x2()" script="x[2] = clamp(x[2], x[1]+0.025, x[1] + 0.33);" trigger_script="x[2]" trigger_type="0" trigger="1" osc_message="/Breakpoint/x2" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="x3()" script="x[3] = clamp(x[3],0.66,1.);" trigger_script="x[3]" trigger_type="0" trigger="1" osc_message="/Breakpoint/x3" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="asdf()" script="x[3]=0.66;" trigger_script="" trigger_type="1" trigger="1" osc_message="/Breakpoint/asdf" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+<SCRIPT name="y2()" script="y[3] = y[2];" trigger_script="y[2]" trigger_type="0" trigger="1" osc_message="/Breakpoint/y2" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
+</WINDOW>
+</JZML>
